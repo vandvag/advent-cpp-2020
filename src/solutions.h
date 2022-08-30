@@ -6,5 +6,6 @@
 #define ADVENT_CPP_2020_SOLUTIONS_H
 
 #include "Day01.h"
+#include "Day02.h"
 
 #endif //ADVENT_CPP_2020_SOLUTIONS_H

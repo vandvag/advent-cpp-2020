@@ -5,12 +5,12 @@
 #include "Day01.h"
 
 void Day01::solutionPart1() {
-	std::cout << "Solution to Part 1: " << "\n";
+	std::cout << "Solution for Day 1, Part 1: " << "\n";
 	std::cout << twoSum(2020) << "\n";
 }
 
 void Day01::solutionPart2() {
-	std::cout << "Solution to Part 2: " << "\n";
+	std::cout << "Solution for Day 1, Part 2: " << "\n";
 	std::cout << threeSum(2020) << "\n";
 }
 
