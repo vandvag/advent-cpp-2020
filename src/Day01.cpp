@@ -11,6 +11,7 @@ void Day01::solutionPart1() {
 
 void Day01::solutionPart2() {
 	std::cout << "Solution to Part 2: " << "\n";
+	std::cout << threeSum(2020) << "\n";
 }
 
 Day01::Day01()
@@ -29,6 +30,18 @@ int Day01::twoSum( int targetSum) {
 			return number * std::stoi(input[elementToIndex.at(difference)]);
 		}
 		elementToIndex.insert({number, i});
+	}
+	return 0;
+}
+
+int Day01::threeSum(int targetSum) {
+	for (const std::string& numberAsString: input) {
+		int number = std::stoi(numberAsString);
+		int difference = targetSum - number;
+		int productOfOtherNumbers = twoSum(difference);
+		if (productOfOtherNumbers != 0) {
+			return number * productOfOtherNumbers;
+		}
 	}
 	return 0;
 }

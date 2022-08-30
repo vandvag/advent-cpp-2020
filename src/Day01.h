@@ -16,6 +16,7 @@ public:
 	void solutionPart1();
 	void solutionPart2();
 	int twoSum(int targetSum);
+	int threeSum(int targetSum);
 };
 
 #endif //ADVENT_CPP_2020_DAY01_H
