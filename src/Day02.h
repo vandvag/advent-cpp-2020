@@ -10,6 +10,7 @@
 #include <string>
 #include <vector>
 #include <unordered_map>
+#include <regex>
 #include "../utils/Utilities.h"
 
 class Day02 {
@@ -28,7 +29,8 @@ public:
 	Day02();
 	void solutionPart1();
 	void solutionPart2();
-	int countValidPasswords();
+	int countValidPasswordsPart1();
+	int countValidPasswordsPart2();
 };
 
 #endif //ADVENT_CPP_2020_DAY02_H

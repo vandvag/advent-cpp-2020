@@ -4,7 +4,7 @@
 
 #include "Day02.h"
 
-Day02::Day02() :input(Utilities::readLinesFromFile("../inputs/day02-sample.in")){
+Day02::Day02() :input(Utilities::readLinesFromFile("../inputs/day02.in")){
 	Utilities::verifyElseCrash(!input.empty());
 	for (const std::string& currentLine: input) {
 		// split into 3
@@ -21,16 +21,31 @@ Day02::Day02() :input(Utilities::readLinesFromFile("../inputs/day02-sample.in"))
 
 void Day02::solutionPart1() {
 	std::cout << "Solution for Day 2, Part 1:" << "\n";
-	std::cout << countValidPasswords() << "\n";
+	std::cout << countValidPasswordsPart1() << "\n";
 }
 
 void Day02::solutionPart2() {
 	std::cout << "Solution for Day 2, Part 2:" << "\n";
+	std::cout << countValidPasswordsPart2() << "\n";
 }
 
-int Day02::countValidPasswords() {
+int Day02::countValidPasswordsPart1() {
+	int validPasswords = 0;
 	for (auto& password: passwords) {
-		std::cout << password.password << "\n";
+//		int l = static_cast<int>(std::count(password.password.begin(), password.password.end(), password.policyCharacter));
+		auto l = std::count(password.password.begin(), password.password.end(), password.policyCharacter);
+		if (password.minPos <= l && l <= password.maxPos)
+			validPasswords++;
 	}
-	return 0;
+	return validPasswords;
 }
+
+int Day02::countValidPasswordsPart2() {
+	int validPasswords = 0;
+	for (auto& password: passwords) {
+		if (password.password[password.minPos - 1] == password.policyCharacter ^ password.password[password.maxPos - 1] == password.policyCharacter)
+			++validPasswords;
+	}
+	return validPasswords;
+}
+
